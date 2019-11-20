@@ -20,8 +20,8 @@ app.use('/', express.static('public'));
  * =======================================================================
  */
 
-app.get('/banana', (request, response)=>{
-  response.send("ehllo");
+app.get('/banana', (request, response) => {
+    response.send("ehllo");
 });
 
 /*
@@ -31,16 +31,20 @@ app.get('/banana', (request, response)=>{
  */
 
 app.get('/react', (req, res) => {
-  const myHtml = `
+    const myHtml = `
     <html>
+    <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    </head>
       <body>
-        <h1>Wow, react</h1>
+        
         <div id="app"></div>
         <script type="text/javascript" src="/main.js"></script>
       </body>
     </html>
   `;
-  res.send( myHtml );
+    res.send(myHtml);
 });
 
 /*
@@ -50,5 +54,5 @@ app.get('/react', (req, res) => {
  */
 
 app.listen(process.env.PORT, () => {
-  console.log(`ssssserver is now running on http://localhost:${process.env.PORT}`);
+    console.log(`ssssserver is now running on http://localhost:${process.env.PORT}`);
 });
